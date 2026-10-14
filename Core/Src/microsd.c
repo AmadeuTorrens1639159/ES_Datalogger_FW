@@ -77,7 +77,7 @@ int MicroSD_Init(void) {
 
     if (fresult == FR_OK) {
     	const char *header = "Timestamp_ms,"
-    	                     "FpDIGRpot,FpDIGLpot,FpDIGRvel,FpDIGLvel,FpANLbrake,"
+    	                     "FpDIGRpot,FpDIGLpot,FpANLLspeed,FpANLRspeed,FpANLbrake,"
     	                     "FpINTr2d,FpSDCinertia,FpSDCbots,FpSDCcsdb,FpERRapps,"
     	                     "FpDIGr2d,FpINTrefrion,FpSHU,FpANLRpot,"
     	                     "RpSDChvd,RpSDCtsms,RpSDCrsdb,RpSDClsdb,RpSTAbrkledR,"
@@ -135,8 +135,8 @@ int MicroSD_LogData(volatile DICCP_t *DICCP) {
         // FrontECU
         DICCP->FpDIGRpot,
 		DICCP->FpDIGLpot,
-		DICCP->FpDIGRvel,
-		DICCP->FpDIGLvel,
+		DICCP->FpANLLspeed,
+		DICCP->FpANLRspeed,
 		DICCP->FpANLbrake,
 		DICCP->FpINTr2d,
         DICCP->FpSDCinertia,
