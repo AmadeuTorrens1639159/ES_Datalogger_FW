@@ -25,8 +25,8 @@ static void Parse_FrontECU(volatile DICCP_t *DICCP, uint32_t can_id, uint8_t *da
 	case 0x100:
 		DICCP->FpDIGRpot = data[0];
 		DICCP->FpDIGLpot = data[1];
-		DICCP->FpANLLspeed =(data[2]<<8)|data[3];
-		DICCP->FpANLbrake = data[4];
+		DICCP->FpANLbrake = data[2];
+		DICCP->FpANLLspeed =(data[3]<<8)|data[4];
 		DICCP->FpANLRspeed = (data[5]<<8)|data[6];
 		break;
 
